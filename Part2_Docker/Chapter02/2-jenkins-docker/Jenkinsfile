@@ -17,6 +17,7 @@ pipeline {
         stage('Build Codes by Gradle') {
             steps {
                 sh """
+                chmod a+rwx ${mainDir}
                 cd ${mainDir}
                 ./gradlew clean build
                 """
